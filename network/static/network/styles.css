@@ -1,0 +1,160 @@
+body {
+    height: 100%;
+}
+
+
+/*  ------------------- Post Styling ------------ */
+#post-form-container {
+    position: relative;
+    margin: auto;
+    width: 75%;
+    /* height: 50px; */
+    /* background-color: beige; */
+    border-radius: 5px;  
+}
+
+#post-form {
+    background-color: #f8f9fa;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+#all-post-container {
+    /* position: relative; */
+    /* background-color: rgb(253, 226, 230); */
+    background-color: greenyellow;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 20px 75px;
+    /* height: 100px; */
+}
+
+.post-container {
+    margin:auto;
+    background-color: blue;
+}
+
+.post-container-user{
+    position: relative;
+
+}
+
+.post-item {
+    /* position: relative; */
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin: 5px;
+
+}
+
+.liked {
+    color: red;
+}
+
+.page-h1 {
+    margin: 10px;
+}
+
+/*  ---------------- PROFILE STLYING ------------- */
+
+#profile-container {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: greenyellow;
+    overflow: auto;
+}
+
+#profile-info {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 25%;
+    height: 500px;
+    margin:5px;
+    margin-left: 15px;
+    background-color: rgb(253, 226, 230);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#profile-post-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    right: 0px;
+    width: 60%;
+    height: 500px;
+    margin: auto;
+    background-color: purple;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+#profile-post-form-container {
+    width: 75%;
+    margin: auto;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* 
+# Redunant
+#prof-posts-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid green;
+} */
+
+
+.profile-link {
+    text-decoration: underline;
+    color: black;
+}
+
+
+/*  --------------- BUTTON FUNCTIONS --------------- */
+.edit-button {
+    position: absolute;
+    font-size: x-small;
+    right: 5px;
+    top: 5px;
+    width:40px;
+    height:25px;
+    background-color: #007bff;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+}
+
+.follow-button {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+    width: 85px;
+    height: 35px;
+    background-color: #007bff;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+}
+
+.input-follow {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+    width: 75px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+}
