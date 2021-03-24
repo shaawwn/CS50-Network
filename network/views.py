@@ -86,8 +86,6 @@ def get_all(request):
 
     # Load Post content
     posts = display_posts(request, 'get_all')
-    for post in posts:
-        print("Post likes", post.liked, post.id)
     # Pagination 
     post_paginator = Paginator(posts, 10)
     page_num = request.GET.get('page')
@@ -95,20 +93,22 @@ def get_all(request):
 
     return render(request, "network/all.html", {
         "form": form,
-        "posts": posts,
+        # "posts": posts,
         "page": page
     })
 
 
 def get_following(request):
-    """Rener Following page"""
+    """Render Following page"""
 
     # Get the users that current_user is following
     current_user = User.objects.get(username=request.user.username)
     current_user_profile = Profile.objects.get(user=current_user)
     users_following = current_user_profile.user_following.all()
-    print(len(users_following))
-    print(users_following)
+
+    # Check how many followers/following
+    # print(len(users_following))
+    # print(users_following)
 
     # Get posts from following
     posts = display_posts(request, {'get_following': users_following})
@@ -209,12 +209,14 @@ def create_post(request):
     print("Gets past POST check")
     data = json.loads(request.body)
     body = data.get("body", "")
-
+    print("Gets past request")
     new_post = Post(
         user=request.user,
         body=body
     )
+    print("Creates the post")
     new_post.save()
+    print("Gets past post.save()")
     return JsonResponse({"message": "Post successfully uploaded"}, status=201)
 
 # ----------------------------------------------------- LOAD POSTS ----------------------------
@@ -264,19 +266,6 @@ def get_post(request, post_id):
         return JsonResponse(post.serialize(), safe=False)
 
 
-def like_posts(request, post_id):
-    """Allow a user to like a post and add it to that user's liked post attribute"""
-    
-    " Get the post using the post id and current user"
-    post = Post.objects.get(id=post_id)
-    current_user = User.objects.get(username=request.user.username)
-    user_profile = Profile.objects.get(user=current_user)
-
-    user_liked = Profile.liked_posts.all()
-    
-    # Add post to users 'liked_posts' attribute
-    user_profile.liked_posts.add(post)
-    user_profile.save()
 
 # ------------------------------------------------------ PROFILE FUNCTIONS ------------------------------------------------
 

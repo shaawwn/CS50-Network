@@ -20,7 +20,8 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     # liked = models.BooleanField(default=False) Either a post is liked as a Boolean, or liked by a User
     # liked = models.ManyToManyField(User, blank=True, related_name="likes")
-    liked = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    liked_by = models.ManyToManyField(User, blank=True, related_name="users_liked")
 
 
     def serialize(self):
